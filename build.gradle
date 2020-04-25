@@ -11,17 +11,19 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         jcenter()
         google()
         maven { url "https://jitpack.io" }
         maven { url 'https://dl.bintray.com/kodein-framework/Kodein-DI/' }
     }
 
-    tasks.withType(Javadoc) {
+   tasks.withType(Javadoc) {
         options.addStringOption('Xdoclint:none', '-quiet')
         options.addStringOption('encoding', 'UTF-8')
     }
 }
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir
